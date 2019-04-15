@@ -25,11 +25,11 @@ function compressquality()
 	extension=${extension^^}
 	new_im=${path}'/'"compress.jpeg"
 	echo $extension
-	if [[ $extension == "JPEG" || $extension == "JPG" ]];then
+	if [[ $extension == "JPEG" ]];then
 		$(convert $1 -quality $2 $new_im)
 		echo "Compress quality success"
 	else
-		echo "We can only compress JPEG/JPG images"
+		echo "We can only compress JPEG images"
 	fi
 }
 function compressresolution()
@@ -45,8 +45,8 @@ function compressresolution()
 			$(convert -resize "x"$3 $1 $new_im)
 		elif [[ $2 == "w" ]];then
 			$(convert -resize $3 $1 $new_im)
-		echo "Compress solution success"
 	        fi
+		echo "Compress solution success"
 	fi
 }
 function add_prefixname()
