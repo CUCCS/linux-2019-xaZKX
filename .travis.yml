@@ -25,7 +25,7 @@ script:
   - bash chap04/Image_processing.sh -f chap04/image_process/3.jpg -w "cuc"
   - bash chap04/Image_processing.sh -f chap04/image_process/8.png -cf
   - bash chap04/Image_processing.sh -f chap04/image_process/6.png -cq 20
-  - bash chap04/Image_processing.sh -f chap04/image_process/5.jpg -cq 30
+  - bash chap04/Image_processing.sh -f chap04/image_process/5.jpeg -cq 30
   - bash chap04/Image_processing.sh -f chap04/image_process/9.png -cr 200 -crt h
   
   - bash chap04/worldcup.sh -h
