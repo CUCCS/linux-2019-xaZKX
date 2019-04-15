@@ -35,7 +35,7 @@ function compressquality()
 function compressresolution()
 {
 	origin_im=$1
-	path=${origin_im/*}
+	path=${origin_im%/*}
         origin_im=${origin_im##*/}
         extension=${origin_im##*.}
         extension=${extension^^}
@@ -52,10 +52,8 @@ function compressresolution()
 function add_prefixname()
 {
         origin_im=$1
-        oldname=${origin_im/%.*}
-        extension=${origin_im:$(expr index $origin_im .)}
-        path=${origin_im:0:$(expr index $origin_im /)}
-        name=${origin_im:$(expr index $oldname /)}
+        path=${origin_im%/*}'/'
+        name=${origin_im##*/}
         new_im=$path$2$name
         $(mv $1 $new_im)
         echo "Prefix rename success"
@@ -63,11 +61,9 @@ function add_prefixname()
 function add_suffixname()
 {
 	origin_im=$1
-    	oldname=${origin_im:0:$[$(expr index $origin_im .)-1]}
-    	extension=${origin_im:$[$(expr index $origin_im .)-1]}  
-    	path=${origin_im:0:$(expr index $origin_im /)}
-    	name=${oldname:$(expr index $oldname /)}
-    	new_im=$path$name$2$extension 
+    	oldname=${origin_im/%.*}
+    	extension='.'${origin_im##*.}  
+    	new_im=$oldname$2$extension 
     	$(mv $1 $new_im)
     	echo "Suffix rename success"
 
