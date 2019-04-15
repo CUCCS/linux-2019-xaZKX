@@ -15,7 +15,33 @@ before_install:
     - sudo p7zip -d web_log.tsv.7z
 
 script:
+
   - bash test.sh
+
+  - bash chap04/Image_processing.sh -h
+  - bash chap04/Image_processing.sh -f chap04/image_process/1.jpg -sr "cuc"
+  - bash chap04/Image_processing.sh -f chap04/image_process/2.jpg -pr "cuc"
+  - bash chap04/Image_processing.sh -f chap04/image_process/3.jpg -w "cuc"
+  - bash chap04/Image_processing.sh -f chap04/image_process/8.png -cf
+  - bash chap04/Image_processing.sh -f chap04/image_process/6.png -cq 20
+  - bash chap04/Image_processing.sh -f chap04/image_process/5.jpg -cf
+  - bash chap04/Image_processing.sh -f chap04/image_process/7.png -cr 200 -crt h
+  
+  - bash chap04/worldcup.sh -h
+  - bash chap04/worldcup.sh -a
+  - bash chap04/worldcup.sh -b
+  - bash chap04/worldcup.sh -c
+  - bash chap04/worldcup.sh -d
+  
+  - bash chap04/web_log.sh -h
+  - bash chap04/web_log.sh -a
+  - bash chap04/web_log.sh -b
+  - bash chap04/web_log.sh -c
+  - bash chap04/web_log.sh -d
+  - bash chap04/web_log.sh -e
+  - bash chap04/web_log.sh -f
+  
+  
 
 after_script:
   - /usr/bin/shellcheck test.sh
