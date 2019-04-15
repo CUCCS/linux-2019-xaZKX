@@ -40,7 +40,9 @@ script:
   - bash chap04/web_log.sh -c
   - bash chap04/web_log.sh -d
   - bash chap04/web_log.sh -e
-  - bash chap04/web_log.sh -f
+  - bash chap04/web_log.sh -f /software/winvn/winvn.gif
+  - bash chap04/web_log.sh -f /images/NASA-logosmall.gif
+  
   
   
 
